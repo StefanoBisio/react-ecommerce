@@ -4,7 +4,8 @@ import { withRouter } from 'react-router-dom';
 
 const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => (
     
-    // On history.push() we could have just put .push(linkUrl). But by composing a string starting with the value of match.props (a page property we can access thanks to withRouter) we can make this component aware of his position in the project, and generate a link starting with the current url it's been displayed on, plus the link we want.
+    // On history.push() we could have just put .push(linkUrl). But by composing a string starting with the value of match.props (a page property we can access thanks to withRouter) we can make this component aware of his position in the project, and generate a link starting with the current url it's been displayed on, plus the link we want. 
+    // In case on the homepage the link will be '/hats' where '/' is given by the prop match.url, and 'hats' from the state in directory.component.jsx
     <div className={`${size} menu-item`} 
     onClick={() => history.push(`${match.url}${linkUrl}`)}>
         <div className="background-image" style={{ backgroundImage: `url(${imageUrl})`}} ></div>
