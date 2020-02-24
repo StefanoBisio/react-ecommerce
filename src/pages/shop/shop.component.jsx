@@ -1,6 +1,5 @@
 import React from 'react';
 import SHOP_DATA from './shop.data';
-
 import CollectionPreview from '../../components/preview-collection/collection-preview.component';
 
 class ShopPage extends React.Component {
@@ -14,7 +13,8 @@ class ShopPage extends React.Component {
     }
 
     render() {
-        //Need to destructure 'collections', not simply declare as 'collections'. Without the curly braces we are declaring an array of 'collections' starting with an array of 'collections' inside of it, there would be an extra layer created. Hover on the const to see the overlay helper.
+        /*Need to destructure 'collections', not simply declare as 'collections'.
+        Without the curly braces we are declaring an array of 'collections' starting with an array of 'collections' inside of it, there would be an extra layer created. Hover on the const to see the overlay helper.*/
         const {collections} = this.state;
 
         return (
