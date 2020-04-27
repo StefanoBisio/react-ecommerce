@@ -4,6 +4,10 @@ import './sign-in.styles.scss';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
+//Brackets are needed in imports then the Export Default isn't used. In this case I'm importing a const from that file
+// https://stackoverflow.com/questions/36795819/when-should-i-use-curly-braces-for-es6-import
+import {signInWithGoogle} from '../../../src/firebase/firebase.utils'
+
 class SignIn extends React.Component {
     constructor(props) {
         super(props);
@@ -63,6 +67,9 @@ class SignIn extends React.Component {
 
                     <CustomButton type="submit" >
                         Sign in
+                    </CustomButton>
+                    <CustomButton onClick={signInWithGoogle} >
+                        Sign in with Google
                     </CustomButton>
                 </form>
             </div>
