@@ -1,5 +1,6 @@
 * {
   font-family: 'Playfair Display', serif;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -34,13 +35,5 @@
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-.header {
-  a {
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
   }
 }
