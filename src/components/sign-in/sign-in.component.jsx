@@ -36,9 +36,9 @@ class SignIn extends React.Component {
         - event.target will be the <input> element itself
         - name will be either 'email' or 'password' depending on what is changing
         - value is the content of the input field*/
-        console.log(event.target);
-        console.log('value is: '+value);
-        console.log('name is: '+name);
+        // console.log(event.target);
+        // console.log('value is: '+value);
+        // console.log('name is: '+name);
     }
 
     render() {

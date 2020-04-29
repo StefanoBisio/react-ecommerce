@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignIndAndSignUpPage from './pages/sign-in-up/sign-in-up.component';
-import {auth} from '../src/firebase/firebase.utils';
+import { auth, createUserProfileDocument } from '../src/firebase/firebase.utils';
 
 //This was a stateless component before the implementation of Firebase authentication, after that I needed a state on this component.
 class App extends React.Component{
@@ -22,8 +22,11 @@ class App extends React.Component{
 
   componentDidMount() {
     //https://firebase.google.com/docs/reference/js/firebase.auth.Auth#onauthstatechanged
-    this.unsubscribeFromAuth = auth.onAuthStateChanged( user => {
-      this.setState({currentUser: user})
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+
+      this.setState({currentUser: user});
+
+      createUserProfileDocument(user);
 
       console.log(user);
     })
